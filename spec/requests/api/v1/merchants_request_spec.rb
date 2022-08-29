@@ -17,4 +17,17 @@ RSpec.describe 'Merchants API' do
       expect(merchant[:attributes][:name]).to be_a(String)
     end
   end
+
+  it 'shows one merchant if id is given' do
+    id = create(:merchant).id
+
+    get "/api/v1/merchants/#{id}"
+
+    merchant = JSON.parse(response.body, symbolize_names: true)
+
+    expect(response).to be_successful
+
+    expect(merchant[:data]).to have_key(:id)
+    expect(merchant[:data][:id]).to eq(id.to_s)
+  end
 end
