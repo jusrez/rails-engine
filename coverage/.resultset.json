@@ -35,6 +35,26 @@
           1,
           1,
           null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          5,
+          5,
+          5,
+          5,
+          5,
+          null,
+          null,
           null
         ]
       },
@@ -309,11 +329,23 @@
           null
         ]
       },
+      "/Users/justinramirez/turing/3mod/projects/rails-engine/spec/factories/items.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          6,
+          6,
+          6,
+          null,
+          null
+        ]
+      },
       "/Users/justinramirez/turing/3mod/projects/rails-engine/spec/factories/merchants.rb": {
         "lines": [
           1,
           1,
-          9,
+          10,
           null,
           null
         ]
@@ -324,6 +356,8 @@
           1,
           1,
           1,
+          1,
+          null,
           null,
           null,
           null
@@ -331,6 +365,7 @@
       },
       "/Users/justinramirez/turing/3mod/projects/rails-engine/app/models/merchant.rb": {
         "lines": [
+          1,
           1,
           null
         ]
@@ -368,8 +403,32 @@
           1,
           null
         ]
+      },
+      "/Users/justinramirez/turing/3mod/projects/rails-engine/app/models/item.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/justinramirez/turing/3mod/projects/rails-engine/app/controllers/api/v1/items_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/justinramirez/turing/3mod/projects/rails-engine/app/serializers/item_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1661812707
+    "timestamp": 1661816281
   }
 }
