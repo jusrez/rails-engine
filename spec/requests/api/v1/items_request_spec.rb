@@ -91,6 +91,8 @@ RSpec.describe 'Items API' do
       item = Item.find_by(id: id)
 
       expect(response).to be_successful
+      expect(response.status).to eq(202)
+      
       expect(item.name).to eq("Juicy Fruit")
       expect(item.description).to eq("Best bubblegum in the world")
       expect(item.unit_price).to eq(3.25)
