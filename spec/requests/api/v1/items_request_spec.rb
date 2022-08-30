@@ -74,4 +74,26 @@ RSpec.describe 'Items API' do
 
       expect(item).to_not eq(Item.last)
     end
+
+    it 'updates an item' do
+      merchants = create_list(:merchant, 2)
+      id = create(:item, merchant_id: merchants.first.id).id
+      previous_item = Item.last
+      item_params = {
+                    name: "Juicy Fruit",
+                    description: "Best bubblegum in the world",
+                    unit_price: 3.25,
+                    merchant_id: merchants.last.id
+                    }
+      headers = {"CONTENT_TYPE" => "application/json"}
+
+      put "/api/v1/items/#{id}", headers: headers, params: JSON.generate({item: item_params})
+      item = Item.find_by(id: id)
+
+      expect(response).to be_successful
+      expect(item.name).to eq("Juicy Fruit")
+      expect(item.description).to eq("Best bubblegum in the world")
+      expect(item.unit_price).to eq(3.25)
+      expect(item.merchant_id).to eq(merchants.last.id)
+    end
 end
