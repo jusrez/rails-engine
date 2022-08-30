@@ -92,10 +92,23 @@ RSpec.describe 'Items API' do
 
       expect(response).to be_successful
       expect(response.status).to eq(202)
-      
+
       expect(item.name).to eq("Juicy Fruit")
       expect(item.description).to eq("Best bubblegum in the world")
       expect(item.unit_price).to eq(3.25)
       expect(item.merchant_id).to eq(merchants.last.id)
+    end
+
+    it 'get an items merchant' do
+      merchant = create(:merchant)
+      item = create(:item, merchant_id: merchant.id)
+
+      get "/api/v1/items/#{item.id}/merchant"
+
+      expect(response).to be_successful
+      
+      item_merchant = JSON.parse(response.body, symbolize_names: true)
+  
+      expect(item_merchant[:data][:id]).to eq(merchant.id.to_s)
     end
 end

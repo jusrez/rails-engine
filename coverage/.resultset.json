@@ -209,9 +209,9 @@
           1,
           1,
           1,
-          19,
-          19,
-          19,
+          20,
+          20,
+          20,
           null,
           null
         ]
@@ -220,7 +220,7 @@
         "lines": [
           1,
           1,
-          29,
+          30,
           null,
           null
         ]
@@ -234,6 +234,8 @@
           1,
           null,
           1,
+          1,
+          null,
           null,
           null,
           null
@@ -282,15 +284,15 @@
           null,
           1,
           null,
-          1,
-          1,
+          0,
+          0,
           null,
-          1,
-          5,
-          5,
-          5,
-          5,
-          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
           null,
           null,
           null
@@ -322,10 +324,6 @@
           1,
           null,
           1,
-          2,
-          2,
-          null,
-          0,
           null,
           null,
           null,
@@ -366,6 +364,7 @@
       "/Users/justinramirez/turing/3mod/projects/rails-engine/app/controllers/application_controller.rb": {
         "lines": [
           1,
+          null,
           null
         ]
       },
@@ -377,13 +376,11 @@
           null
         ]
       },
-      "/Users/justinramirez/turing/3mod/projects/rails-engine/app/controllers/api/v1/merchants_controller.rb": {
+      "/Users/justinramirez/turing/3mod/projects/rails-engine/app/controllers/api/v1/merchant_controller.rb": {
         "lines": [
           1,
-          1,
-          1,
           null,
-          null,
+          1,
           1,
           1,
           null,
@@ -397,8 +394,22 @@
           1,
           null
         ]
+      },
+      "/Users/justinramirez/turing/3mod/projects/rails-engine/app/controllers/api/v1/merchants_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1661891665
+    "timestamp": 1661897771
   }
 }
