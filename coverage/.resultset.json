@@ -284,15 +284,15 @@
           null,
           1,
           null,
-          0,
-          0,
+          1,
+          1,
           null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
+          1,
+          5,
+          5,
+          5,
+          5,
+          5,
           null,
           null,
           null
@@ -321,6 +321,11 @@
       },
       "/Users/justinramirez/turing/3mod/projects/rails-engine/app/controllers/api/v1/items_controller.rb": {
         "lines": [
+          1,
+          null,
+          1,
+          2,
+          1,
           1,
           null,
           1,
@@ -364,6 +369,11 @@
       "/Users/justinramirez/turing/3mod/projects/rails-engine/app/controllers/application_controller.rb": {
         "lines": [
           1,
+          1,
+          null,
+          1,
+          1,
+          0,
           null,
           null
         ]
@@ -410,6 +420,6 @@
         ]
       }
     },
-    "timestamp": 1661897771
+    "timestamp": 1661959216
   }
 }
