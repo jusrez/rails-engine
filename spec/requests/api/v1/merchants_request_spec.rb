@@ -50,4 +50,17 @@ RSpec.describe 'Merchants API' do
       expect(merchant_item[:attributes]).to have_key(:merchant_id)
     end
   end
+
+  it 'finds one merchant by name fragment' do
+    merchant = create_list(:merchant, 3).first.name
+    name_fragment = merchant.slice(0,2)
+    
+    get "/api/v1/merchants/find?name=#{name_fragment}"
+
+    expect(response).to be_successful
+
+    merchant_info = JSON.parse(response.body, symbolize_names: true)
+    
+    expect(merchant_info[:data][:attributes][:name]).to eq(merchant)
+  end
 end
