@@ -17,7 +17,7 @@ RSpec.describe Item, type: :model do
       expect(Item.fuzzy_name_search('tO').first).to eq(item2)
       expect(Item.fuzzy_name_search('tO').last).to eq(item1)
     end
-    it '.group_by_min_price' do
+    it '.price_search' do
       merchant = create(:merchant)
       item1 = Item.create!(name: 'Toy', description: 'A childs toy', unit_price: 12.50, merchant_id: merchant.id)
       item2 = Item.create!(name: 'Ball', description: 'A bouncy ball', unit_price: 25.50, merchant_id: merchant.id)

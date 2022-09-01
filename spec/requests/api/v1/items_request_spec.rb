@@ -125,7 +125,7 @@ RSpec.describe 'Items API' do
       items_matched = JSON.parse(response.body, symbolize_names: true)[:data]
 
       expect(items_matched.count).to eq(2)
-      expect(items_matched[0][:id]).to eq(item2.id.to_s) 
-      expect(items_matched[1][:id]).to eq(item3.id.to_s)
+      expect(items_matched[0][:id]).to eq(item3.id.to_s) 
+      expect(items_matched[1][:id]).to eq(item2.id.to_s)
     end
 end

@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-09-01T14:10:50-04:00">2022-09-01T14:10:50-04:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-09-01T14:15:22-04:00">2022-09-01T14:15:22-04:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -154,7 +154,7 @@
             <td class="cell--number">6</td>
             <td class="cell--number">6</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.33</td>
+            <td class="cell--number">1.50</td>
             
           </tr>
         
@@ -965,7 +965,7 @@
 
             
 
-            <code class="ruby">    results = Item.where(&#39;lower(name) LIKE ?&#39;, &quot;%#{query.downcase}%&quot;)</code>
+            <code class="ruby">    results = Item.fuzzy_name_search(query)</code>
           </li>
         </div>
       
@@ -1662,8 +1662,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="5">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="4" data-linenumber="5">
+            <span class="hits">4</span>
             
 
             
@@ -6239,7 +6239,7 @@
 
             
 
-            <code class="ruby">      expect(items_matched[0][:id]).to eq(item2.id.to_s) </code>
+            <code class="ruby">      expect(items_matched[0][:id]).to eq(item3.id.to_s) </code>
           </li>
         </div>
       
@@ -6250,7 +6250,7 @@
 
             
 
-            <code class="ruby">      expect(items_matched[1][:id]).to eq(item3.id.to_s)</code>
+            <code class="ruby">      expect(items_matched[1][:id]).to eq(item2.id.to_s)</code>
           </li>
         </div>
       
