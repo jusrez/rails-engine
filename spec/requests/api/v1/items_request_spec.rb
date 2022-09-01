@@ -111,4 +111,21 @@ RSpec.describe 'Items API' do
   
       expect(item_merchant[:data][:id]).to eq(merchant.id.to_s)
     end
+
+    it 'finds all items by name fragment' do
+      merchant = create(:merchant)
+      item1 = Item.create(name: "Ball", description: "A toy ball", unit_price: 5.50 , merchant_id: merchant.id)
+      item2 = Item.create(name: "String", description: "A cloth string", unit_price: 3.25, merchant_id: merchant.id)
+      item3 = Item.create(name: "Straw", description: "A metal toy", unit_price: 10.00, merchant_id: merchant.id)
+      item4 = Item.create(name: "Hat", description: "A covering for your head", unit_price: 25.00, merchant_id: merchant.id)
+
+      get '/api/v1/items/find_all?name=sT'
+
+      expect(response).to be_successful
+      items_matched = JSON.parse(response.body, symbolize_names: true)[:data]
+
+      expect(items_matched.count).to eq(2)
+      expect(items_matched[0][:id]).to eq(item2.id.to_s) 
+      expect(items_matched[1][:id]).to eq(item3.id.to_s)
+    end
 end

@@ -220,7 +220,7 @@
         "lines": [
           1,
           1,
-          33,
+          35,
           null,
           null
         ]
@@ -237,7 +237,181 @@
           1,
           1,
           null,
+          1,
+          1,
           null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/justinramirez/turing/3mod/projects/rails-engine/app/models/item.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/justinramirez/turing/3mod/projects/rails-engine/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/justinramirez/turing/3mod/projects/rails-engine/spec/models/merchant_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/justinramirez/turing/3mod/projects/rails-engine/app/models/merchant.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/justinramirez/turing/3mod/projects/rails-engine/spec/requests/api/v1/items_request_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          10,
+          10,
+          10,
+          10,
+          10,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
           null,
           null
         ]
@@ -309,27 +483,6 @@
           null,
           1,
           null,
-          null
-        ]
-      },
-      "/Users/justinramirez/turing/3mod/projects/rails-engine/app/models/merchant.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/justinramirez/turing/3mod/projects/rails-engine/app/models/application_record.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/justinramirez/turing/3mod/projects/rails-engine/app/models/item.rb": {
-        "lines": [
-          1,
-          1,
           null
         ]
       },
@@ -419,6 +572,17 @@
           null
         ]
       },
+      "/Users/justinramirez/turing/3mod/projects/rails-engine/app/controllers/api/v1/items_search_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/justinramirez/turing/3mod/projects/rails-engine/app/controllers/api/v1/merchants_controller.rb": {
         "lines": [
           1,
@@ -449,6 +613,6 @@
         ]
       }
     },
-    "timestamp": 1661978207
+    "timestamp": 1662051047
   }
 }

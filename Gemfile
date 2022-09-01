@@ -31,6 +31,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   gem 'pry'
   gem 'jsonapi-serializer'
+  gem 'shoulda-matchers', '~> 5.0'
 end
 
 group :development do
