@@ -12,7 +12,9 @@ RSpec.describe Merchant, type: :model do
       merchant3 = Merchant.create!(name: "Santa Claus")
       merchant4 = Merchant.create!(name: "Peter Rabbit")
 
+      expect(Merchant.fuzzy_search("sA")).to eq([merchant2, merchant1, merchant3])
       expect(Merchant.fuzzy_search("sA").first).to eq(merchant2)
+      expect(Merchant.fuzzy_search("sA").last).to eq(merchant3)
 
     end
   end
