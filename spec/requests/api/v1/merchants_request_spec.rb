@@ -53,6 +53,16 @@ RSpec.describe 'Merchants API' do
 
   it 'finds one merchant by name fragment' do
     merchant = create_list(:merchant, 3).first.name
+    name_fragment = "NOMATCH"
+    
+    get "/api/v1/merchants/find?name=#{name_fragment}"
+
+    expect(response).to be_successful
+    
+    no_match = JSON.parse(response.body, symbolize_names: true)
+    
+    expect(no_match[:data]).to eq({}) 
+    
     name_fragment = merchant.slice(0,2)
     
     get "/api/v1/merchants/find?name=#{name_fragment}"

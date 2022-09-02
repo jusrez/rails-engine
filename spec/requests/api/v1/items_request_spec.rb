@@ -25,6 +25,11 @@ RSpec.describe 'Items API' do
     it 'gets one item if the id is provided' do
       id = create(:item).id
 
+      get "/api/v1/items/1526489"
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(404)
+
       get "/api/v1/items/#{id}"
 
       expect(response).to be_successful
@@ -41,6 +46,20 @@ RSpec.describe 'Items API' do
 
     it 'creates a new item' do
       merchant = create(:merchant)
+      item_params = ({
+                    name: 'Lollipop',
+                    unit_price: 1.25,
+                    merchant_id: merchant.id
+                    })
+      headers = {"CONTENT_TYPE" => "application/json"}
+
+      post "/api/v1/items", headers: headers, params: JSON.generate({item: item_params})
+      
+      created_item = Item.last
+      
+      expect(response).to_not be_successful
+      expect(response.status).to eq(404)
+
       item_params = ({
                     name: 'Lollipop',
                     description: 'A cherry flavored treat',
@@ -77,6 +96,22 @@ RSpec.describe 'Items API' do
 
     it 'updates an item' do
       merchants = create_list(:merchant, 2)
+      id = create(:item, merchant_id: merchants.first.id).id
+      previous_item = Item.last
+      item_params = {
+                    name: "",
+                    description: "",
+                    unit_price: "hello world",
+                    merchant_id: merchants.last.id
+                    }
+      headers = {"CONTENT_TYPE" => "application/json"}
+
+      put "/api/v1/items/#{id}", headers: headers, params: JSON.generate({item: item_params})
+      item = Item.find_by(id: id)
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(404)
+
       id = create(:item, merchant_id: merchants.first.id).id
       previous_item = Item.last
       item_params = {
@@ -127,5 +162,53 @@ RSpec.describe 'Items API' do
       expect(items_matched.count).to eq(2)
       expect(items_matched[0][:id]).to eq(item3.id.to_s) 
       expect(items_matched[1][:id]).to eq(item2.id.to_s)
+    end
+
+    it 'finds one item by prices' do
+      merchant = create(:merchant)
+      item1 = Item.create(name: "Ball", description: "A toy ball", unit_price: 5.50 , merchant_id: merchant.id)
+      item2 = Item.create(name: "String", description: "A cloth string", unit_price: 3.25, merchant_id: merchant.id)
+      item3 = Item.create(name: "Straw", description: "A metal toy", unit_price: 10.00, merchant_id: merchant.id)
+      item4 = Item.create(name: "Hat", description: "A covering for your head", unit_price: 25.00, merchant_id: merchant.id)
+
+      get '/api/v1/items/find?name=ball&min_price=5'
+
+      expect(response.status).to eq(400)
+
+      get '/api/v1/items/find?name=ball&max_price=8'
+
+      expect(response.status).to eq(400)
+
+      get '/api/v1/items/find?min_price=-1'
+
+      expect(response.status).to eq(400)
+
+      get '/api/v1/items/find?max_price=-1'
+
+      expect(response.status).to eq(400)
+      
+      get '/api/v1/items/find?min_price=5'
+      
+      expect(response).to be_successful
+
+      item = JSON.parse(response.body, symbolize_names: true)
+
+      expect(item[:data][:id]).to eq(item1.id.to_s)
+
+      get '/api/v1/items/find?max_price=5'
+      
+      expect(response).to be_successful
+
+      item = JSON.parse(response.body, symbolize_names: true)
+      
+      expect(item[:data][:id]).to eq(item2.id.to_s)
+
+      get '/api/v1/items/find?min_price=5&max_price=30'
+      
+      expect(response).to be_successful
+
+      item = JSON.parse(response.body, symbolize_names: true)
+      
+      expect(item[:data][:id]).to eq(item1.id.to_s)
     end
 end
