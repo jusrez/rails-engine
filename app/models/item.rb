@@ -6,9 +6,20 @@ class Item < ApplicationRecord
     .order('name ASC')
   end
 
-  def self.price_search(min = nil, max = nil)
+  def self.min_price_search(price)
+    where('unit_price >= ?', price)
+    .order('name ASC')
+  end
+
+  def self.max_price_search(price)
+    where('unit_price <= ?', price)
+    .order('name ASC')
+  end
+
+  def self.min_max_price_search(min, max)
     where('unit_price >= ?', min)
     .where('unit_price <= ?', max)
+    .order('name ASC')
   end
   
 end
